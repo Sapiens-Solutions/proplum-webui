@@ -1,0 +1,11 @@
+.tableContainer {
+  height: 62vh;
+}
+
+@media (min-height: 870px) {
+  .tableContainer {
+    min-height: 62vh;
+    /* Height enough to see 10 rows in table */
+    height: 574px;
+  }
+}

@@ -1,0 +1,117 @@
+@keyframes row-fade-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes row-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes row-uploaded {
+  0% {
+    filter: saturate(1);
+  }
+
+  50% {
+    filter: saturate(2);
+  }
+
+  100% {
+    filter: saturate(1);
+  }
+}
+
+.tableRow > td[data-is-last-left-pinned="true"]:not(:first-child) {
+  padding-right: 32px !important;
+}
+
+.tableRow > td {
+  background-color: white !important;
+}
+
+.tableRow > td[data-pinned="left"] {
+  background-color: #f9fafb !important;
+}
+
+.tableRow:hover > td,
+.tableRow:hover > td[data-pinned="left"] {
+  background-color: #fafafa !important;
+}
+
+/* Add bottom border for cells in row */
+.tableRow > td {
+  border-bottom: 1px solid rgb(229, 229, 229);
+}
+
+/* Add right padding for last text input in row */
+.tableRow > td:last-child > div {
+  padding-right: 10px !important;
+}
+
+.selectedRow > td,
+.selectedRow > td[data-pinned="left"] {
+  background-color: hsl(var(--muted)) !important;
+}
+
+.addedRow {
+  @apply transition-[background-color] duration-300;
+
+  animation: row-fade-in 300ms linear;
+}
+
+.addedRow > td,
+.addedRow > td[data-pinned="left"] {
+  background-color: rgb(220 252 231) !important;
+}
+
+.addedRow.selectedRow > td,
+.addedRow.selectedRow > td[data-pinned="left"] {
+  background-color: rgb(187 247 208) !important;
+}
+
+.addedRow:hover > td,
+.addedRow:hover > td[data-pinned="left"] {
+  background-color: rgb(187 247 208) !important;
+}
+
+.recentlyDeletedRow {
+  @apply transition-[background-color] duration-300;
+
+  animation: row-fade-out 300ms linear forwards;
+}
+
+.recentlyDeletedRow > td,
+.recentlyDeletedRow > td[data-pinned="left"] {
+  background-color: rgb(254 226 226) !important;
+}
+
+.recentlyDeletedRow:hover > td,
+.recentlyDeletedRow:hover > td[data-pinned="left"] {
+  background-color: rgb(254 202 202) !important;
+}
+
+.recentlyUploadedRow {
+  @apply transition-[background-color] duration-300;
+
+  animation: row-uploaded 500ms linear forwards;
+}
+
+/* Styles for inputs in row */
+.recentlyUploadedRow > td > div > input {
+  @apply text-[#00593f] hover:text-[#00593f];
+}

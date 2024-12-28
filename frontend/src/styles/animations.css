@@ -1,0 +1,80 @@
+@keyframes spinners-react-dotted-center {
+  0%,
+  15%,
+  85%,
+  100% {
+    transform: scale(0);
+  }
+  40%,
+  50% {
+    transform: scale(1);
+  }
+  84% {
+    transform: scale(0.45);
+  }
+}
+
+@keyframes spinners-react-dotted-shrink {
+  50% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes modal-appear {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes modal-disappear {
+  0% {
+    pointer-events: none;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes toast-exit {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes error-toast-enter {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

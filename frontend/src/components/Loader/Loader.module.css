@@ -1,0 +1,18 @@
+.loader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader .loader__container {
+  border-radius: 100%;
+  border: 3px solid;
+  animation: spinner 1.5s infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

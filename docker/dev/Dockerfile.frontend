@@ -1,0 +1,18 @@
+# Используем официальный образ Node.js
+FROM node:20
+
+# Устанавливаем рабочую директорию в контейнере
+WORKDIR /app
+
+# Копируем файлы package.json и package-lock.json (если есть)
+COPY ./frontend/package*.json ./
+
+# Устанавливаем зависимости
+RUN npm install
+
+# Копируем исходный код проекта
+COPY ./frontend .
+RUN export $(grep -v '^#' .env | xargs -d '\n')
+
+# Команда для запуска сервера разработки
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

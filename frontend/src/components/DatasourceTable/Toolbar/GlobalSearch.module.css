@@ -1,0 +1,12 @@
+.globalSearchInputContainer {
+  @apply relative mb-[-1px] flex h-[34px] min-w-[150px] items-center rounded-md border border-input bg-background p-0 text-sm shadow-sm;
+}
+
+.searchInput {
+  @apply flex h-8 w-[150px] items-center rounded-none border-none bg-transparent py-2 pl-3 text-sm lg:w-[250px];
+
+  padding-right: 32px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}

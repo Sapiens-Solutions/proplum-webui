@@ -1,0 +1,11 @@
+.tableHeaderButton {
+  @apply ml-[14px] h-8 whitespace-nowrap data-[state=open]:bg-accent;
+
+  box-shadow: none !important;
+}
+
+.tableDataCell {
+  @apply whitespace-nowrap;
+
+  padding: 4px 1rem 4px 2rem !important;
+}

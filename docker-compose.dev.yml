@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  backend:
+    container_name: "proplum-ui-backend-dev"
+    build:
+      context: .
+      dockerfile: ./docker/dev/backend.Dockerfile
+    volumes:
+      - ./backend:/app
+    env_file: .env
+    ports:
+      - "8001:8001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  frontend:
+    container_name: "proplum-ui-frontend-dev"
+    build:
+      context: .
+      dockerfile: ./docker/dev/frontend.Dockerfile
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    env_file: .env
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+networks:
+  default:
+    name: proplum-dev-network
+    driver: bridge

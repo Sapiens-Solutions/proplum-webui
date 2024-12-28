@@ -1,0 +1,23 @@
+.container {
+  @apply min-w-[150px];
+}
+
+.control {
+  cursor: pointer !important;
+  border: none !important;
+  border-radius: 6px !important;
+
+  transition: background-color 0.2s;
+}
+
+.menu {
+  @apply min-w-[300px];
+}
+
+.singleValue {
+  @apply text-inherit;
+}
+
+.indicatorsContainer {
+  display: none !important;
+}

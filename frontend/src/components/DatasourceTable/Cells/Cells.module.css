@@ -1,0 +1,45 @@
+.cellInput {
+  @apply min-w-[5px] text-ellipsis whitespace-nowrap rounded-[6px] border-none bg-transparent py-0 pl-[9px] pr-0 leading-[3] transition-[background-color] duration-200 hover:bg-gray-100 focus:bg-blue-100 focus:outline-none;
+
+  min-width: 100%;
+}
+
+.untouchedCellInput {
+  @apply !bg-transparent hover:!bg-gray-100 focus:!bg-blue-100 focus:!outline-none;
+}
+
+.focusedUntouchedCellInput {
+  @apply !bg-gray-100 !outline-none;
+}
+
+.editedCellInput {
+  @apply !bg-[#fef6d8] hover:!bg-[#fdf0bf] focus:!bg-[#fdf0bf];
+}
+
+.savedCellInput {
+  @apply !bg-[#d0f9e4] !text-[#00593f] hover:!bg-[#d0f9e4] hover:!text-[#00593f] focus:!bg-[#d0f9e4];
+}
+
+.addedCellInput {
+  @apply !bg-transparent !text-primary hover:!bg-[#d0f9e4] hover:!text-primary focus:!bg-[#d0f9e4];
+}
+
+.focusedAddedCellInput {
+  @apply !bg-[#d0f9e4];
+}
+
+.disabledCell {
+  @apply !cursor-auto !bg-transparent hover:!bg-transparent focus:!bg-transparent;
+}
+
+.nullCellValue {
+  @apply uppercase !text-gray-400;
+}
+
+.emptyButtonCell {
+  @apply min-h-[38px] w-full cursor-default rounded-[6px] outline-none focus-visible:ring-1 focus-visible:ring-blue-400;
+}
+
+.errorCellInput {
+  @apply !border-2 !border-solid !border-[#ee8894];
+}

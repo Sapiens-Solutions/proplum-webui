@@ -1,0 +1,53 @@
+.jse-menu {
+  @apply !absolute left-[80px] top-[-35px] !z-[11] !bg-transparent !text-primary;
+}
+
+.jse-button:focus {
+  @apply !bg-transparent !text-primary;
+}
+
+.jse-button:hover {
+  @apply !bg-accentblue !text-white;
+}
+
+.jse-button:disabled {
+  @apply !cursor-not-allowed !text-primary !opacity-40;
+}
+
+.jse-button:disabled:hover {
+  @apply !bg-transparent;
+}
+
+.jse-message {
+  display: none !important;
+}
+
+.jse-contents {
+  border: none !important;
+}
+
+.jse-button.jse-sort,
+.jse-button.jse-transform,
+.jse-button.jse-search {
+  display: none !important;
+}
+
+.jse-button.jse-search + .jse-separator {
+  display: none !important;
+}
+
+.jse-separator {
+  display: none !important;
+}
+
+.jse-button.jse-contextmenu {
+  display: none !important;
+}
+
+.jse-button.jse-group-button {
+  display: none !important;
+}
+
+.jse-button.jse-group-button {
+  border: none !important;
+}

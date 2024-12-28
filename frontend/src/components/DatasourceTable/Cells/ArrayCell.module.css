@@ -1,0 +1,29 @@
+.container {
+  @apply min-w-[150px];
+}
+
+.control {
+  border: none !important;
+  border-radius: 6px !important;
+
+  transition: background-color 0.2s;
+}
+
+.menu {
+}
+
+.menuPortal {
+  visibility: hidden;
+}
+
+.valueContainer {
+  @apply cursor-text flex-nowrap;
+}
+
+.singleValue {
+  @apply text-inherit;
+}
+
+.indicatorsContainer {
+  display: none !important;
+}

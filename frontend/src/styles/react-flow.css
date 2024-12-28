@@ -1,0 +1,9 @@
+.react-flow__node-group {
+  /* Make group nodes always be under object nodes */
+  z-index: -1 !important;
+}
+
+/* Hide react-flow link */
+.react-flow__panel.react-flow__attribution.bottom.right {
+  display: none;
+}

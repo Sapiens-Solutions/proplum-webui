@@ -1,0 +1,37 @@
+# Build stage
+FROM python:3.12-alpine AS builder
+
+# Установка зависимостей для сборки
+RUN apk add --no-cache gcc musl-dev libffi-dev
+
+WORKDIR /app
+COPY ./backend/pyproject.toml ./backend/poetry.lock* ./
+
+# Установка poetry и зависимостей проекта
+RUN pip install --no-cache-dir poetry && \
+    poetry config virtualenvs.create false && \
+    poetry install --no-dev --no-interaction --no-ansi
+
+COPY ./backend .
+
+# Production stage
+FROM python:3.12-alpine AS production
+
+# Копирование установленных пакетов и приложения из builder
+COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+COPY --from=builder /app /app
+COPY --from=builder /usr/local/bin/uvicorn /usr/local/bin/uvicorn
+
+WORKDIR /app/src
+
+# Установка необходимых зависимостей для запуска
+RUN apk add --no-cache libffi
+
+# Создание непривилегированного пользователя
+RUN adduser -D appuser
+USER appuser
+
+# Команда для запуска приложения
+CMD ["uvicorn", "main:main_app", "--host", "0.0.0.0", "--port", "8000"]
+
+EXPOSE 8001

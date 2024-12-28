@@ -1,0 +1,24 @@
+.headerIconButton {
+  @apply p-2 data-[state=open]:bg-accent;
+
+  box-shadow: none !important;
+}
+
+.headerIcon {
+  @apply h-4 w-4;
+}
+
+.dropdownIcon {
+  @apply mr-2 h-3.5 w-3.5 text-muted-foreground/70;
+}
+
+.dropdownIconMargin {
+  @apply ml-4;
+}
+
+.filterInput {
+  @apply text-primary;
+
+  height: 32px !important;
+  box-shadow: none !important;
+}

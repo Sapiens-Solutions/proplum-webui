@@ -1,0 +1,13 @@
+.headerLink {
+  @apply flex h-9 items-center justify-start whitespace-nowrap rounded-md px-3 text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+
+  box-shadow: none !important;
+}
+
+.nonActiveHeaderLink {
+  @apply hover:bg-accent hover:text-accent-foreground;
+}
+
+.activeHeaderLink {
+  @apply bg-darkblue text-primary-foreground hover:bg-darkblue/90 dark:bg-muted dark:text-white dark:hover:bg-muted dark:hover:text-white;
+}

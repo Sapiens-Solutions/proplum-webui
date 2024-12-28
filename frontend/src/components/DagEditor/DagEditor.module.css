@@ -1,0 +1,7 @@
+.dndflow {
+  @apply relative flex h-full grow;
+}
+
+.reactflowWrapper {
+  @apply h-full grow;
+}

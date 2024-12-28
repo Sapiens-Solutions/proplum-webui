@@ -1,0 +1,21 @@
+# Используем официальный образ Python
+FROM python:3.12
+
+# Устанавливаем рабочую директорию в контейнере
+WORKDIR /app
+
+# Устанавливаем poetry
+RUN pip install poetry
+
+# Копируем файлы зависимостей
+COPY ./backend/pyproject.toml ./backend/poetry.lock* ./
+
+# Устанавливаем зависимости
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi
+
+# Копируем исходный код проекта
+COPY ./backend .
+
+# Команда для запуска сервера разработки
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]

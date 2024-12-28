@@ -1,0 +1,15 @@
+.tableHeader {
+  @apply sticky top-0 z-10 rounded-t-md bg-white;
+
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+    0 1px 2px -1px var(--tw-shadow-color);
+  --tw-shadow: 0 1px 1px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.tableHeaderRow {
+  @apply bg-white;
+
+  border-bottom: none !important;
+}

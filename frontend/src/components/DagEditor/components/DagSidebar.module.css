@@ -1,0 +1,11 @@
+.dagDndSidebar {
+  @apply relative right-0 h-full w-[250px] max-w-[250px] select-none rounded-[4px] border-none bg-[#fefefe];
+}
+
+.dndnode {
+  @apply flex w-full cursor-grab select-none items-center text-ellipsis whitespace-nowrap border-none bg-transparent px-[16px] py-[8px] text-left transition-[background] duration-300 hover:bg-[#e0eafc];
+}
+
+.dndnodeGroup {
+  @apply hover:bg-[#e0eafc];
+}

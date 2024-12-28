@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  backend:
+    container_name: "proplum-ui-backend"
+    build:
+      context: ./
+      dockerfile: ./docker/prod/Dockerfile.backend
+    env_file: .env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://backend:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  nginx:
+    container_name: "proplum-ui-frontend"
+    build:
+      context: ./
+      dockerfile: ./docker/prod/Dockerfile.frontend
+    env_file: .env
+    ports:
+      - "8080:8080"
